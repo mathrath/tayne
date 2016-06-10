@@ -17,7 +17,7 @@ app.get('/', function(req, res) {
 
 	// Get rid of those pesky .DS_Stores and other hidden files
 	files = files.filter(function(value){
-		return !value.startsWith(".");
+		return !(value.substring(0, 1) == ".");
 	});
 
 	var videoFile = files[Math.floor(Math.random() * files.length)]
